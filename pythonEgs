@@ -24,5 +24,5 @@ print(name)
 
 
 WAP in Python to define and use a function. The function prompts the user to enter his/her name and prints :
-"Hello!, welcome " + name + "!!"
+"Hello!, Welcome " + name + "!!"
 
