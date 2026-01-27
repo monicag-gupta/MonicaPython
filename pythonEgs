@@ -49,3 +49,14 @@ hello.disp_name()
 
 
 
+abc.py
+
+x = 10   # global
+
+def test():
+    y = 5   # local
+    print(x)
+
+
+
+
