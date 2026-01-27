@@ -122,3 +122,16 @@ print(add(3,4))
 print(add(x=3,y=4))
 
 print(add(y=3,x=4))
+
+
+
+
+
+There may be several types of arguments which can be passed at the time of function call.
+Required arguments
+Keyword arguments
+Default arguments
+Variable-length arguments : *var, **Kwargs
+
+
+
