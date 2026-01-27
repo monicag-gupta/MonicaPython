@@ -9,3 +9,11 @@ Virtual environment Python (env/bin/python)
 
 
 
+
+def foo(x):
+    y = 10 * x + 2
+    return y
+
+print foo(10)  # 102
+
+
