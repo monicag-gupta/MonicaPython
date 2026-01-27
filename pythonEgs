@@ -26,3 +26,18 @@ print(name)
 WAP in Python to define and use a function. The function prompts the user to enter his/her name and prints :
 "Hello!, Welcome " + name + "!!"
 
+
+
+hello.py
+
+def disp_name():
+    name=input("Enter your name:")
+    print("Hello!, Welcome " + name + "!!")
+
+def add(x,y):
+    return x+y
+
+# disp_name()
+# add(3,4)
+
+
