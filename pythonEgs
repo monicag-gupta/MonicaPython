@@ -429,6 +429,19 @@ api_call("/users","GET", 4, timeout=10, secure=False)
 _______________________
 
 
+1 Default Arguments
+def add(a, b, c=0):
+    return a + b + c
+
+add(2, 3)
+add(2, 3, 4)
+2 Variable Arguments (*args)
+def add(*args):
+    return sum(args)
+
+add(2, 3)
+add(2, 3, 4, 5)
+
 
 
 
