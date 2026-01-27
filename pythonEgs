@@ -171,6 +171,21 @@ print(add(y=3,x=4))
 
 print(add(3))
 
+__________________________________________
+
+
+l1=[1,2,3]
+print(l1)
+print(type(l1))
+l1.append(4)
+print(l1)
+print(type(l1))
+
+t1=(1,2,3)
+print(t1)
+print(type(t1))
+# t1.append(4)
+
 
 
 
