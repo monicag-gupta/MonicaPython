@@ -341,6 +341,20 @@ Example from Python itself:
 len([1, 2, 3])    # positional-only
 
 
+___________________________________
+
+
+
+def divide(a, b, /):
+    return a / b
+
+divide(10, 2)          # Valid
+# divide(a=10, b=2)      # TypeError
+
+
+
+
+
 
 
 
