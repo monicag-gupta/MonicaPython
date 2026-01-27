@@ -354,6 +354,27 @@ divide(10, 2)          # Valid
 
 
 
+Arguments after *:
+Must be passed as keyword
+Cannot be positional
+Syntax
+def connect(*, host, port):
+    pass
+Example
+def connect(*, host, port):
+    print(host, port)
+
+connect(host="localhost", port=5432)   # Correct
+connect("localhost", 5432)             # TypeError
+With Mixed Arguments
+def create_user(username, *, is_admin=False):
+    print(username, is_admin)
+
+create_user("alice", is_admin=True)    # Correct
+create_user("alice", True)             # Error
+
+
+
 
 
 
