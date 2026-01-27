@@ -646,3 +646,36 @@ for i in range(1,11):
     print(n,"X",i,"=",b(i)) 
 #the lambda function b is called with the iteration variable i  
 
+_______________________________
+
+
+#Consider the following example where we filter out the only odd number from the given list.
+
+#program to filter out the tuple which contains odd numbers    
+lst = (10,22,37,41,100,123,29)  
+
+oddlist = tuple(filter(lambda x:(x%2 == 1),lst)) 
+
+# the tuple contains all the items of the tuple for which the lambda function evaluates to true    
+
+print(oddlist)    
+
+#Output:
+#(37, 41, 123, 29)
+
+
+
+___________________________
+
+
+#program to map the list and get its square    
+lst = [10,20,30,40,50,60]
+
+square_list = list(map(lambda x:x**2,lst)) 
+
+# the tuple contains all the items of the list for which the lambda function returns another list with square of each element of the list    
+
+print(square_list)    
+
+#Output:
+#[100, 400, 900, 1600, 2500, 3600]
