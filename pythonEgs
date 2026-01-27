@@ -227,3 +227,42 @@ def printme(names):
 printme(tuple(["john","David","smith","nick"])) 
 printme([1,3,"HHH"])   
 
+
+
+
+
+
+def func(name1,message,name2):    
+    print("printing the message with",name1,",",message,", and",name2)    
+
+func(name1="John", message="hello", name2="David")   
+func("Johny",message="hello",name2="David")   
+#the Johny is not the keyword argument
+func("John",message="hello","David")   
+#will cause an error due to an in-proper mix of keyword and required arguments being passed in the function call. 
+
+
+
+def func(name1,message,name2):    
+    print("printing the message with",name1,",",message,", and",name2)    
+
+func(name1="John", message="hello", name2="David")   
+func("Johny",message="hello",name2="David")
+#the Johny is not the keyword argument
+# func("John",name2="hello","David")
+#will cause an error due to an in-proper mix of keyword and required arguments being passed in the function call. 
+
+
+
+#Many arguments using Keyword argument
+def food(**kwargs):  
+    print(type(kwargs))
+    print(kwargs)  
+
+food(a="Apple")  
+food(fruits="Orange", Vegetables="Carrot") 
+food('veg')  #Error
+food()
+
+
+
