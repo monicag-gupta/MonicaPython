@@ -18,5 +18,5 @@ Run External Script
 %run test.py
 run Egs/eg1.py
 
-
+print("Hello World")
 
