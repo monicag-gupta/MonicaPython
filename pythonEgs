@@ -376,6 +376,15 @@ create_user("alice", True)             # Error
 
 
 
+def divide(*, a, b):
+    return a / b
+
+# divide(10, 2)           # TypeError
+divide(a=10, b=2)     
+
+
+
+
 
 
 
