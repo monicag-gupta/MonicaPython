@@ -4,4 +4,19 @@ Path to pip:
 
 C:\Users\monica\AppData\Local\Programs\Python\Python314\Scripts
 
+Auto-Completion
+import math
+math.sq<Tab>
+Help
+len?
+print??
+Magic Commands
+%time sum(range(100000))
+%pwd
+%ls
+Run External Script
+%run test.py
+run Egs/eg1.py
+
+
 
