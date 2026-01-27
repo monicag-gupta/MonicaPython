@@ -593,3 +593,9 @@ it = iter(nums)
 
 print(list(it))   # [1, 2, 3]
 print(list(it))   # []
+
+
+
+
+
+
