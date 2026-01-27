@@ -43,3 +43,9 @@ def add(x,y):
 
 Add a new file in current folder as useHello.py
 
+import hello
+
+hello.disp_name()
+
+
+
