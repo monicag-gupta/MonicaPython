@@ -71,3 +71,16 @@ print(y)
 print(x)
 
 
+
+
+x = 10   # global
+
+def test():
+    y = 5   # local
+    print(x)
+    print(y)
+
+# print(y)
+print(x)
+test()
+
