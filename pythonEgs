@@ -261,8 +261,25 @@ def food(**kwargs):
 
 food(a="Apple")  
 food(fruits="Orange", Vegetables="Carrot") 
-food('veg')  #Error
+# food('veg')  #Error
 food()
+
+
+
+
+
+
+_____________________________
+
+
+#Many arguments using Keyword argument
+def emplist(emps):
+    print("the table: ")
+    for emp in emps:
+        print(emp)
+
+emplist([{"name":"John","sal":20,"desig":"IT"},
+         {"name":"Jane","sal":25,"desig":"HR"}])
 
 
 
