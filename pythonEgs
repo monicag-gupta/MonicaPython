@@ -135,3 +135,24 @@ Variable-length arguments : *var, **Kwargs
 
 
 
+
+def add(x,y):
+    print("x: "+ str(x))
+    print("y: "+ str(y))
+    return x + y
+
+print(add(3,4))
+
+print(add(x=3,y=4))
+
+print(add(y=3,x=4))
+
+
+# print(add(3))  ###TypeError: add() missing 1 required positional argument: 'y'
+
+
+
+
+
+
+
