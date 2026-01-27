@@ -1,0 +1,11 @@
+In VS Code:
+
+Select Python Interpreter (VERY IMPORTANT)
+Press: Ctrl + Shift + P
+Select: Python: Select Interpreter
+Choose:
+System Python, or
+Virtual environment Python (env/bin/python)
+
+
+
