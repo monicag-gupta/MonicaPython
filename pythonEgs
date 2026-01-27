@@ -188,6 +188,15 @@ print(type(t1))
 
 ______________________________
 
+def printme(*names):    
+    print("type of passed argument is ",type(names))  
+    # names.append("John")  
+    print("printing the passed arguments...")    
+    for name in names:    
+        print(name)    
+
+printme("john","David","smith","nick") 
+printme(1,3,"HHH")   
 
 
 
