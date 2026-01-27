@@ -584,3 +584,12 @@ def demo():
 
 for n in demo():
     print(n,end=" ")
+
+
+
+
+nums = [1, 2, 3]
+it = iter(nums)
+
+print(list(it))   # [1, 2, 3]
+print(list(it))   # []
