@@ -281,5 +281,27 @@ def emplist(emps):
 emplist([{"name":"John","sal":20,"desig":"IT"},
          {"name":"Jane","sal":25,"desig":"HR"}])
 
+____________
+
+
+Packing (Tuple Packing)
+def total_marks(*marks):
+    print(marks)
+
+total_marks(80, 85, 90)
+Arguments packed into a tuple
+Unpacking (Tuple Unpacking)
+scores = (80, 85, 90)
+total_marks(*scores)
+Dictionary Unpacking
+def employee(name, salary):
+    print(name, salary)
+
+data = {"name": "John", "salary": 50000}
+employee(**data)
+
+
+
+
 
 
