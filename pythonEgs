@@ -303,5 +303,7 @@ employee(**data)
 
 
 
+WAP in python to create a function summation which takes multiple parameters using variable arguments(*args)
+
 
 
