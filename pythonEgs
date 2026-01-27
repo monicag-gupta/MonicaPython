@@ -304,6 +304,13 @@ employee(**data)
 
 
 WAP in python to create a function summation which takes multiple parameters using variable arguments(*args)
+The program should show usages:
+summation(2,3)
+summation(4,5,6,7,8)
+summation(6,"abc")  ##should give error
+summation("Abc","def")
+
+
 
 
 
