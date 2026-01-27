@@ -466,3 +466,24 @@ def _(data):
     print("String processing")
 
 
+
+
+from functools import singledispatch
+
+@singledispatch
+def process(data):
+    print("Default processing")
+
+@process.register(int)
+def _(data):
+    print("Integer processing")
+
+@process.register(str)
+def _(data):
+    print("String processing")
+
+
+process(8.9)
+process(8)
+process("aa")
+
