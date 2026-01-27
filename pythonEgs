@@ -84,3 +84,17 @@ def test():
 print(x)
 test()
 
+
+
+
+x = 10   # global
+
+def test():
+    y = 5   # local
+    x=20
+    print(x)
+    print(y)
+
+# print(y)
+print(x)
+test()
