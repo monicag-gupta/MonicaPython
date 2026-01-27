@@ -413,4 +413,22 @@ api_call("/users", "GET", 2, 10)                        # Error
 
 
 
+def api_call(endpoint, method, /, retries=3, *, timeout, secure=True):
+    print(endpoint, method, retries, timeout, secure)
+
+api_call("/users","GET", retries=2, timeout=10, secure=False)
+api_call("/users","GET", timeout=10, secure=False)
+
+def api_call(endpoint, method, /, retries, *, timeout, secure=True):
+    print(endpoint, method, retries, timeout, secure)
+
+api_call("/users","GET", retries=2, timeout=10, secure=False)
+api_call("/users","GET", 4, timeout=10, secure=False)
+
+
+_______________________
+
+
+
+
 
