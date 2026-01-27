@@ -211,3 +211,19 @@ printme(["john","David","smith","nick"])
 printme([1,3,"HHH"])   
 
 
+
+
+
+____________________________
+
+
+def printme(names):    
+    print("type of passed argument is ",type(names))  
+    # names.append("John")  
+    print("printing the passed arguments...")    
+    for name in names:    
+        print(name)    
+
+printme(tuple(["john","David","smith","nick"])) 
+printme([1,3,"HHH"])   
+
