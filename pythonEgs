@@ -445,3 +445,24 @@ add(2, 3, 4, 5)
 
 
 
+3 Conditional Logic
+def area(x, y=None):
+    if y:
+        return x * y
+    return x * x
+4 functools.singledispatch (Real Overloading)
+from functools import singledispatch
+
+@singledispatch
+def process(data):
+    print("Default processing")
+
+@process.register(int)
+def _(data):
+    print("Integer processing")
+
+@process.register(str)
+def _(data):
+    print("String processing")
+
+
