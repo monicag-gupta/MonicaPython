@@ -570,3 +570,17 @@ class Countdown:
 
 for num in Countdown(30):
     print(num, end=" ")  #30 28 26 24 22 20 18 16 14 12 10 8 6 4 2
+
+
+
+
+
+
+def demo():
+    print("Start",end=" ")
+    yield 1
+    print("Resume",end=" ")
+    yield 2
+
+for n in demo():
+    print(n,end=" ")
