@@ -388,3 +388,29 @@ divide(a=10, b=2)
 
 
 
+
+
+Full Syntax Pattern
+def func(pos1, pos2, /, standard, *, kw1, kw2):
+    pass
+Example
+def api_call(endpoint, method, /, retries=3, *, timeout, secure=True):
+    print(endpoint, method, retries, timeout, secure)
+Valid Call
+api_call(
+    "/users",
+    "GET",
+    retries=2,
+    timeout=10,
+    secure=False
+)
+Invalid Calls
+api_call(endpoint="/users", method="GET", timeout=10)  # Error
+api_call("/users", "GET", 2, 10)                        # Error
+
+
+
+
+
+
+
