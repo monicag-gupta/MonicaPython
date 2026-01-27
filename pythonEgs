@@ -16,3 +16,13 @@ def foo(x):
 
 print (foo(10))  # 102
 
+
+
+
+name = input("Enter your name: ")
+print(name)
+
+
+WAP in Python to define and use a function. The function prompts the user to enter his/her name and prints :
+"Hello!, welcome " + name + "!!"
+
