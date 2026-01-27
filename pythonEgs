@@ -154,5 +154,23 @@ print(add(y=3,x=4))
 
 
 
+def add(x,y=6):
+    print("x: "+ str(x))
+    print("y: "+ str(y))
+    return x + y
+
+print(add(3,4))
+
+print(add(x=3,y=4))
+
+print(add(y=3,x=4))
+
+
+# print(add(3))  ###TypeError: add() missing 1 required positional argument: 'y'
+
+
+print(add(3))
+
+
 
 
