@@ -321,6 +321,24 @@ def add_numbers(*args):
 
 add_numbers(1, 2, 3, 4)
 
+Rule : Arguments before /:
+Cannot be passed as keyword
+Must be positional
+Syntax
+def func(a, b, /):
+    pass
+Example
+def divide(a, b, /):
+    return a / b
+
+divide(10, 2)          # Valid
+divide(a=10, b=2)      # TypeError
+Why Use It?
+Protect API from misuse
+Match C-API / built-in functions
+Prevent breaking changes
+Example from Python itself:
+len([1, 2, 3])    # positional-only
 
 
 
