@@ -737,6 +737,37 @@ BaseException
 _____________________
 
 
+Basic try–except
+
+try:
+    x = int("10")
+    y = 10 / 0
+except ZeroDivisionError:
+    print("Cannot divide by zero")
+
+Handling Multiple Exceptions
+
+try:
+    num = int(input("Enter number: "))
+    print(10 / num)
+except ValueError:
+    print("Invalid input")
+except ZeroDivisionError:
+    print("Division by zero")
+
+
+Single except for Multiple Exceptions
+
+except (ValueError, ZeroDivisionError):
+    print("Input error")
+
+Catching All Exceptions
+
+except Exception as e:
+    print(e)
+
+Use sparingly—can hide bugs.
+
 
 
 
