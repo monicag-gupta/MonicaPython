@@ -876,6 +876,22 @@ except ZeroDivisionError:
 Always catch specific first, general last.
 
 
+_________
+
+
+class AgeError(Exception):
+    pass
+
+def check_age(age):
+    if age < 18:
+        raise AgeError("Age must be 18 or above")
+    return "Access granted"
+
+try:
+    print(check_age(16))
+except AgeError as e:
+    print(e)
+
 
 
 
