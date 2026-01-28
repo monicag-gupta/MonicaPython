@@ -1097,6 +1097,20 @@ student2.show(21)
 
 
 
+Let's have a look at another scenario, what happen if we declare the two same constructors in the class.
+Note: The constructor overloading is not allowed in Python.
+Internally, the object of the class will always call the last constructor if the class has multiple constructors.
+
+class Student:  
+    def __init__(self):  
+        print("The First Constructor")  
+    def __init__(self):  
+        print("The second contructor")  
+  
+st = Student()  
+
+Output:
+The Second Constructor
 
 
 
