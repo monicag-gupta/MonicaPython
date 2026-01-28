@@ -421,4 +421,17 @@ Streaming data
 
 
 
+Example handling:
+try:
+    with open("missing.txt") as f:
+        print(f.read())
+except FileNotFoundError:
+    print("File not found")
+
+
+
+
+
+
+
 
