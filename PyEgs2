@@ -795,6 +795,25 @@ finally:
 
 
 
+try:
+    num = int(input("Enter number: "))
+    print(10 / num)
+except ZeroDivisionError:
+    print("Div by Error")
+except ValueError:
+    print("Invalid input")
+else:
+    print("Success")
+finally:
+    print("Cleanup")
+
+
+
+
+
+
+
+
 
 
 
