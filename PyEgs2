@@ -773,20 +773,28 @@ Use sparingly—can hide bugs.
 
 else
 Executes only if no exception occurs.
+
 try:
     print(10 / 2)
 except ZeroDivisionError:
     print("Error")
 else:
     print("Success")
+
+
 finally
 Executes always, used for cleanup.
+
+
 try:
     f = open("data.txt")
 except FileNotFoundError:
     print("File missing")
 finally:
     print("Cleanup")
+
+
+
 
 
 
