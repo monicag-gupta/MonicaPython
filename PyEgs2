@@ -477,6 +477,16 @@ Access using module_name.function_name
 
 
 
+Import specific functions
+
+from calculator import add
+
+print(add(20, 30))  # 50
+
+
+Cleaner
+Only add is available
+
 
 
 
