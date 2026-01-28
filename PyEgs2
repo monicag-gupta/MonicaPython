@@ -595,6 +595,15 @@ print(mul(20, 30))  # 600
 
 
 
+________________________
+
+Folder Structure:
+project/
+ ├── main.py
+ └── mypackage/
+     ├── __init__.py
+     ├── calculator.py
+     └── math_ops.py
 
 
 
