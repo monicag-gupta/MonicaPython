@@ -358,5 +358,22 @@ f.close()
 
 
 
+A file object is an iterator.
+
+
+f = open("data.txt")
+
+for line in f:
+    print(line.strip())
+
+f.close()
+
+
+
+Benefits:
+Memory efficient
+Best for large files
+
+
 
 
