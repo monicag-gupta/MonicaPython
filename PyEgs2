@@ -308,6 +308,27 @@ f.close()
 
 
 
+readline()
+Reads one line.
+
+f = open("data.txt")
+line = f.readline()
+print(line)
+f.close()
+
+
+readlines()
+Reads all lines into a list.
+
+
+f = open("data.txt")
+lines = f.readlines()
+print(lines)
+f.close()
+
+
+
+
 
 
 
