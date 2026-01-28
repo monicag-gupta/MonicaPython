@@ -1116,3 +1116,16 @@ The Second Constructor
 
 
 
+class Student:  
+    def __init__(self):  
+        print("The First Constructor")  
+    def __init__(self, n):  
+        print("The second contructor") 
+        self.name=n 
+  
+st = Student("John")  
+
+
+
+
+
