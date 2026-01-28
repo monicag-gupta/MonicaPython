@@ -462,4 +462,22 @@ def mul(a, b):
 
 
 
+Imports the entire module.
+Use the module in another file
+File: main.py
+
+
+import calculator
+
+print(calculator.add(10, 5))       # 15
+print(calculator.subtract(10, 5))  # 5
+
+
+Access using module_name.function_name
+
+
+
+
+
+
 
