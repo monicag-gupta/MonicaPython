@@ -429,6 +429,17 @@ except FileNotFoundError:
     print("File not found")
 
 
+Error
+Cause
+FileNotFoundError
+File doesn't exist
+PermissionError
+No access rights
+ValueError
+File already closed
+
+
+
 
 
 
