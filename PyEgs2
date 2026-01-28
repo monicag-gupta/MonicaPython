@@ -933,6 +933,63 @@ except Exception as e:
 
 
 
+___________
+
+
+
+import traceback
+
+def risky():
+    """
+    This function simulates a risky operation
+    that raises an exception.
+    """
+    print("Inside risky()")
+    return 10 / 0   # This will raise ZeroDivisionError
+
+
+def log_error(e):
+    """
+    Logs the exception details.
+    In real projects, this could log to a file or monitoring system.
+    """
+    print("\n--- Logging Error ---")
+    print("Exception type :", type(e))
+    print("Error message  :", e)
+    print("Traceback:")
+    traceback.print_exc()
+    print("--- End Logging ---\n")
+
+
+def process():
+    """
+    This function calls risky().
+    It catches any exception, logs it,
+    and then re-throws it to the caller.
+    """
+    try:
+        print("Starting process()")
+        risky()
+        print("Process completed successfully")
+    except Exception as e:
+        # Step 1: Catch the exception
+        print("Exception caught in process()")
+
+        # Step 2: Log the exception details
+        log_error(e)
+
+        # Step 3: Re-throw the SAME exception
+        # This preserves the original traceback
+        raise
+
+
+# ---- Program execution starts here ----
+try:
+    process()
+except Exception:
+    print("Exception propagated to main caller")
+
+
 
 
 
