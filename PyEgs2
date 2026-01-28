@@ -893,6 +893,20 @@ except AgeError as e:
     print(e)
 
 
+__________
+
+Accessing Exception Type
+
+try:
+    int("abc")
+except Exception as e:
+    print(type(e))
+
+
+Output:
+<class 'ValueError'>
+
+
 
 
 
