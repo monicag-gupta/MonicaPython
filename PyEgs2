@@ -376,4 +376,49 @@ Best for large files
 
 
 
+Using try-finally
+Ensures the file is always closed, even if an error occurs.
+
+
+f = None
+try:
+    f = open("data.txt", "r")
+    print(f.read())
+finally:
+    if f:
+        f.close()
+Problem:
+Verbose
+Easy to forget close()
+
+
+
+Using Context Manager (with statement) :
+Automatically handles opening & closing.
+
+with open("data.txt", "r") as f:
+    content = f.read()
+    print(content)
+
+
+File closes automatically; Cleaner; Safer
+Writing with Context Manager
+
+with open("data2.txt", "w") as f:
+    f.write("Using context manager")
+
+Reading Line by Line (Best Pattern)
+
+with open("data.txt") as f:
+    for line in f:
+        print(line.strip())
+
+
+Ideal for:
+Logs
+Large datasets
+Streaming data
+
+
+
 
