@@ -655,10 +655,45 @@ Very Pythonic
 
 
 
+Using __all__
+Controls what is imported using:
+from module import *
+Example
+# my_module.py
+# __all__ = ['add']
+__all__ = ["add", "subtract"]
+
+def add(a, b):
+    return a + b
+
+def subtract(a, b):
+    return a - b
+Usage:
+from my_module import *
+add(2, 3)        # OK
+subtract(5, 2)   # NameError
+Without __all__, names starting with _ are ignored.
 
 
 
 
+__all__ = ["add", "subtract"]
+
+def add(a, b):
+    return a + b
+
+def subtract(a, b):
+    return a - b
+
+def div(a, b):
+    return a / b
+
+def mul(a, b):
+    return a * b
+
+if __name__ == "__main__":
+    print("I am in the calculator")
+    print(add(6,8))
 
 
 
