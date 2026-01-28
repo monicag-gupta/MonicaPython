@@ -329,6 +329,33 @@ f.close()
 
 
 
+write()
+
+
+f = open("data2.txt", "w")
+f.write("Hello Python\n")
+f.write("File handling")
+f.close()
+
+
+w mode overwrites existing content.
+writelines()
+
+
+lines = ["Line 1\n", "Line 2\n"]
+f = open("data2.txt", "w")
+f.writelines(lines)
+f.close()
+
+
+Appending to a File
+
+
+f = open("data2.txt", "a")
+f.write("\nNew line added")
+f.close()
+
+
 
 
 
