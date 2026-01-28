@@ -624,6 +624,20 @@ mypackage/math_ops.py
 
 
 
+Create a file outside the package.
+main.py
+
+    from mypackage.calculator import add, subtract
+    from mypackage.math_ops import multiply
+    
+    print(add(10, 5))        # 15
+    print(subtract(10, 5))   # 5
+    print(multiply(4, 3))    # 12
+
+
+
+
+
 
 
 
