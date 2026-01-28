@@ -839,6 +839,21 @@ else:
     print("Valid Age for Emp")
 
 
+___________
+
+def level3():
+    return 10 / 0
+
+def level2():
+    level3()
+
+def level1():
+    level2()
+
+try:
+    level1()
+except ZeroDivisionError:
+    print("Exception caught")
 
 
 
