@@ -700,3 +700,12 @@ if __name__ == "__main__":
 
 
 
+main.py
+
+from calculator import *
+add(2, 3)        # OK
+mul(5, 2)   # NameError
+
+
+
+
