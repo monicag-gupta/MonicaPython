@@ -490,4 +490,87 @@ Only add is available
 
 
 
+from calculator import add
+
+print(add(10, 5))       # 15
+# print(subtract(10, 5))  # 5
+
+
+
+
+
+
+from calculator import add, subtract
+
+print(add(10, 5))       # 15
+print(subtract(10, 5))  # 5
+
+
+
+Import all functions
+
+
+from calculator import *
+
+print(add(20, 30))  # 50
+print(mul(20, 30))  # 600
+
+
+
+
+Cleaner
+All functions are available
+
+
+
+
+from calculator import *
+
+print(add(10, 5))       # 15
+print(subtract(10, 5))  # 5
+
+
+
+Import with alias
+
+
+import calculator as calc
+
+print(calc.add(7, 3))  # 10
+
+
+Shorter name
+
+
+
+
+Get all functions from a file
+import hello
+
+print(hello.__dict__.keys())
+
+
+
+
+Using if __name__ == "__main__"
+
+calculator.py
+def add(a, b):
+    return a + b
+
+if __name__ == "__main__":
+    print(add(2, 3))  # runs only if file is executed directly
+main.py
+import calculator
+
+print(calculator.add(10, 20))
+
+
+
+
+
+
+
+
+
 
