@@ -238,4 +238,42 @@ table = {x: {y: x*y for y in range(1, 6)} for x in range(1, 6)}
 print(table)
 Output (Partial): {1: {1: 1, 2: 2, 3: 3, 4: 4, 5: 5}, 2: {1: 2, 2: 4, ...}, ...}
 
+_________________________________________
 
+Write a Python program that performs the following tasks:
+Create a dictionary of students and their respective scores.
+Add a new student and score to the dictionary.
+Update the score of an existing student.
+Delete a student from the dictionary.
+Calculate the average score of all students.
+Find the highest and lowest score and the student(s) associated with those scores.
+Sort the dictionary by student names and by scores.
+Print the dictionary in a readable format.
+
+
+_________________________________________________________________________________
+
+
+
+Mode
+Meaning
+r
+Read (default)
+w
+Write (overwrite or create)
+a
+Append
+x
+Create file, error if exists
+r+
+Read + Write
+w+
+Write + Read
+a+
+Append + Read
+t
+Text mode (default)
+
+
+
+__________________
