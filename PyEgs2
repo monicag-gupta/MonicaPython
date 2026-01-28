@@ -197,3 +197,18 @@ With condition:
 even_squares = {x: x*x for x in range(10) if x % 2 == 0}
 
 
+
+
+squares = [x*x for x in range(5)]
+print(squares)
+even = [x for x in range(10) if x % 2 == 0]
+print(even)
+unique_lengths = {len(word) for word in ["apple", "banana", "apple"]}
+print(unique_lengths)
+squares = {x: x*x for x in range(5)}
+print(squares)
+even_squares = {x: x*x for x in range(10) if x % 2 == 0}
+print(even_squares)
+
+
+
