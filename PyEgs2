@@ -294,3 +294,21 @@ print(content)
 f.close() 
 
 
+read()
+Reads entire file.
+f = open("data.txt", "r")
+content = f.read()
+print(content)
+f.close() 
+read(n)
+Reads n characters.
+f = open("data.txt")
+print(f.read(10))
+f.close()
+
+
+
+
+
+
+
