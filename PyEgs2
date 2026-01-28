@@ -637,6 +637,25 @@ main.py
 
 
 
+You can expose only selected functions.
+mypackage/__init__.py
+
+    from .calculator import add
+    from .math_ops import multiply
+
+
+main.py
+
+    from mypackage import add, multiply
+    
+    print(add(2, 3))
+    print(multiply(3, 4))
+Clean API
+Very Pythonic
+
+
+
+
 
 
 
