@@ -708,4 +708,36 @@ mul(5, 2)   # NameError
 
 
 
+________________________________________________
+
+
+
+Python exceptions form a class hierarchy.
+BaseException
+├── SystemExit
+├── KeyboardInterrupt
+├── GeneratorExit
+└── Exception
+     ├── ArithmeticError
+     │    ├── ZeroDivisionError
+     │    └── OverflowError
+     ├── LookupError
+     │    ├── IndexError
+     │    └── KeyError
+     ├── ValueError
+     ├── TypeError
+     ├── FileNotFoundError
+     ├── ImportError
+     ├── AttributeError
+     └── RuntimeError
+
+
+
+
+_____________________
+
+
+
+
+
 
