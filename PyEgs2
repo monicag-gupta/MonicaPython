@@ -811,6 +811,37 @@ finally:
 
 
 
+Using raise
+
+if age < 18:
+    raise ValueError("Age must be 18+")
+
+
+Re-raising Exception
+
+
+except Exception:
+    raise
+
+
+Example:
+try:
+    num = int(input("Enter age: "))
+    print("Age:" + str(num))
+    if num < 18:
+        raise ValueError("Age must be 18+")
+# except ValueError as e:
+#     print("Invalid age")
+#     print(e)
+except Exception:
+    raise # raise the same exception
+else:
+    print("Valid Age for Emp")
+
+
+
+
+
 
 
 
