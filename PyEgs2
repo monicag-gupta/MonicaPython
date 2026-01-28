@@ -1000,6 +1000,24 @@ except ValueError as e:
     raise RuntimeError("Conversion failed") from e
 
 
+__________________
+
+OOPS
+
+
+class Employee:    
+    id=10   
+    name="Jay"    
+    def display (self):    
+        print("ID: %d \nName: %s"%(self.id,self.name))    
+
+# Creating a emp instance of Employee class  
+emp=Employee()    
+emp.display()    
+
+Output:
+ID: 10 
+Name: Jay
 
 
 
