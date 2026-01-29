@@ -946,4 +946,83 @@ print(message())   # HELLO WORLD
 
 ____________________
 
+There are three built-in decorators @staticmethod, @classmethod, and @property
+@staticmethod → behaves like a normal function inside a class. Usage: Utility logic
+@classmethod → modifies class state, not instance state. Usage: Alternative constructors
+@property → enables attribute-style access with validation. @property removes need for explicit getters/setters. Usage: Validation & encapsulation
+
+
+
+__________________________
+
+
+
+class Employee:
+    company = "OpenAI"   # Class variable
+
+    def __init__(self, name, salary):
+        self.name = name        # Instance variable
+        self._salary = salary  # Protected (for property)
+
+    # ----------------------------
+    # @staticmethod
+    # ----------------------------
+    @staticmethod
+    def is_valid_salary(salary):
+        """
+        Utility method.
+        Does NOT access class or instance.
+        """
+        return salary > 0
+
+    # ----------------------------
+    # @classmethod
+    # ----------------------------
+    @classmethod
+    def change_company(cls, new_name):
+        """
+        Operates on class data.
+        """
+        cls.company = new_name
+
+    # ----------------------------
+    # @property
+    # ----------------------------
+    @property
+    def salary(self):
+        """Getter"""
+        return self._salary
+
+    @salary.setter
+    def salary(self, amount):
+        """Setter with validation"""
+        if amount <= 0:
+            raise ValueError("Salary must be positive")
+        self._salary = amount
+
+#Using the Class
+# Create object
+emp = Employee("Jay", 50000)
+
+# ----- staticmethod -----
+print(Employee.is_valid_salary(10000))   # True
+print(Employee.is_valid_salary(-5))      # False
+
+# ----- classmethod -----
+print(Employee.company)                  # OpenAI
+Employee.change_company("TechCorp")
+print(Employee.company)                  # TechCorp
+
+# ----- property -----
+print(emp.salary)                        # 50000
+emp.salary = 60000                       # Calls setter
+print(emp.salary)
+
+# emp.salary = -1000   # Raises ValueError
+
+
+
+__________________
+
+
 
