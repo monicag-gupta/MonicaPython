@@ -1127,6 +1127,26 @@ print(matches)
 
 
 
+The match object contains the information about the search and the output. If there is no match found, the None object is returned.
+
+Example
+
+import re  
+  
+str="Hello Monica, How are you, how is life"
+matches = re.search("How", str)  
+print(type(matches))  
+print(matches) #matches is the search object 
+
+Output:
+<class '_sre.SRE_Match'>
+<re.Match object; span=(14, 17), match='How'>
+
+
+
+
+
+
 
 
 
