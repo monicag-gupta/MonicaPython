@@ -1089,6 +1089,47 @@ Inside __init__
 Value assignment must happen in __new__() for immutable types
 
 
+class Singleton:
+    _instance = None
+
+    def __new__(cls):
+        if cls._instance is None:
+            cls._instance = super().__new__(cls)
+        return cls._instance
+
+a = Singleton()
+b = Singleton()
+
+print(a is b)  # True
+Only one object is ever created
+
+
+____
+
+__new__() creates the object and allocates memory, while __init__() initializes the object after creation.
+Rule of Thumb
+Use __init__() → 99% of classes
+Use __new__() → Immutables, Singleton, Metaclasses
+
+
+_____
+
+
+import re  
+
+str="Hello Monica, How are you, how is life. How well goes coding"  
+matches = re.findall("[Hh]ow", str)
+print(matches)
+# ['How', 'how', 'How']
+matches = re.findall("How", str)
+print(matches)
+#['How', 'How']
+
+
+
+
+
+
 
 
 
