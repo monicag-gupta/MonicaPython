@@ -650,5 +650,28 @@ print(c())   # 2
 
 
 
+A decorator is:
+A function that wraps another function to add behavior without modifying its code
+Function Decorator
+def my_decorator(func):
+    def wrapper():
+        print("Before function")
+        func()
+        print("After function")
+    return wrapper
+
+@my_decorator
+def greet():
+    print("Hello")
+
+greet()
+Output
+Before function
+Hello
+After function
+wrapper() is a closure
+
+
+
 
 
