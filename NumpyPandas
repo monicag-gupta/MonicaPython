@@ -87,6 +87,81 @@ print("Reshaped Array:\n", arr_reshaped)
 # [[1 2 3]
 # [4 5 6]]
 
+_________________
+
+
+Create a 1D numpy array with numbers from 1 to 10, then create a 2D array with shape (3, 4).
+
+import numpy as np
+
+# Create a 1D array
+array_1d = np.arange(1, 11)
+print("1D Array:", array_1d)
+
+# Create a 2D array with shape (3, 4)
+array_2d = np.array([[1, 2, 3, 4], [5, 6, 7, 8], [9, 10, 11, 12]])
+print("2D Array:")
+print(array_2d)
+
+
 
 
 _____________
+
+
+Create a NumPy array with values ranging from 0 to 20 with a step of 2.
+Find the shape and size of the array.
+Reshape the array into a 5x2 matrix.
+
+
+import numpy as np
+
+# Create an array from 0 to 20 with a step of 2
+array = np.arange(0, 20, 2)
+print("Array:", array)
+
+# Find the shape and size
+print("Shape:", array.shape)
+print("Size:", array.size)
+
+# Reshape the array into a 5x2 matrix
+reshaped_array = array.reshape(5, 2)
+print("Reshaped Array:")
+print(reshaped_array)
+
+
+
+________________________
+
+
+Create two 1D NumPy arrays, a and b.
+Perform addition, subtraction, and element-wise multiplication.
+Access and print the first element of a and the last element of b.
+
+
+
+import numpy as np
+
+# Create two arrays
+a = np.array([1, 2, 3, 4])
+b = np.array([5, 6, 7, 8])
+
+# Operations
+add_result = a + b
+sub_result = a - b
+mul_result = a * b
+
+# Indexing
+first_a = a[0]
+last_b = b[-1]
+
+print("Addition result:", add_result)
+print("Subtraction result:", sub_result)
+print("Multiplication result:", mul_result)
+print("First element of a:", first_a)
+print("Last element of b:", last_b)
+
+
+
+
+
