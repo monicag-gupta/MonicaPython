@@ -1143,6 +1143,25 @@ Output:
 <re.Match object; span=(14, 17), match='How'>
 
 
+There are the following methods associated with the Match object.
+span(): It returns the tuple containing the starting and end position of the match.
+string(): It returns a string passed into the function.
+group(): The part of the string is returned where the match is found.
+
+Example
+import re  
+  
+str = "Hello Monica. How are you. How is everything"  
+matches = re.search("How", str)  
+print(matches.span())  
+print(matches.group())  
+print(matches.string) 
+Output:
+(14, 17)
+How
+Hello Monica. How are you. How is everything
+
+
 
 
 
