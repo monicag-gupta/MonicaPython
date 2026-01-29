@@ -27,5 +27,16 @@ A lot of packages will be downloaded..
 
 
 
+Creating and Manipulating NumPy Arrays:
+NumPy Array: 
+It is the core object in NumPy for storing and manipulating numerical data. 
+Arrays are more efficient and faster than lists for large datasets.
+Indexing and Slicing: 
+NumPy provides simple and efficient ways to access and manipulate elements in arrays using indexing and slicing.
+Operations: 
+NumPy supports element-wise operations, matrix operations, and advanced mathematical functions.
+Boolean Indexing: 
+Allows for filtering data based on specific conditions.
+NumPy is an essential tool for numerical computing in Python, providing high-performance operations for scientific, engineering, and data science applications.
 
 
