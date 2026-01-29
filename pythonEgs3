@@ -497,5 +497,92 @@ car = Vehicle("Toyota")
 driver.drive(car)  # Association: Driver uses Vehicle
 
 
+___________________
+
+
+Definition:
+Identity is the unique identifier of an object in memory.
+It remains constant during the object’s lifetime.
+Obtained using the built-in id() function.
+a = 10
+b = 10
+
+print(id(a))
+print(id(b))
+Output (may vary):
+140715838203920
+140715838203920
+a and b refer to the same object (integer caching).
+Identity with Mutable Objects
+x = [1, 2, 3]
+y = x
+
+print(id(x))
+print(id(y))
+Both variables point to the same object.
+
+
+
+
+Definition:
+Type defines what kind of object it is.
+Determines supported operations and behavior.
+Checked using the type() function.
+x = 10
+y = 3.14
+z = "Python"
+w = [1, 2, 3]
+
+print(type(x))
+print(type(y))
+print(type(z))
+print(type(w))
+Output:
+<class 'int'>
+<class 'float'>
+<class 'str'>
+<class 'list'>
+Once created, an object’s type never changes.
+
+
+
+
+Definition:
+Value is the data stored inside the object.
+Value can change for mutable objects, but not for immutable ones.
+Immutable Object Example
+a = 10
+print(id(a))
+
+a = a + 5
+print(id(a))
+A new object is created when value changes.
+Mutable Object Example
+lst = [1, 2, 3]
+print(id(lst))
+
+lst.append(4)
+print(id(lst))
+Value changed, identity stayed the same.
+
+
+____________________
+
+
+
+class LifeCycle:
+    def __init__(self):
+        print("Object created")
+
+    def __del__(self):
+        print("Object destroyed")
+
+def demo():
+    obj = LifeCycle()
+    print("Object in use")
+
+demo()
+print("End of program")
+
 
 
