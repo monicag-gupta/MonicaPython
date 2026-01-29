@@ -1024,5 +1024,73 @@ print(emp.salary)
 
 __________________
 
+__new__() and __init__()
+__new__() : Creates the object (rarely overridden)
+__init__() : Initializes the object (commonly used)
+class Demo:
+    def __new__(cls):
+        print("__new__ called")
+        return super().__new__(cls)
+
+    def __init__(self):
+        print("__init__ called")
+
+obj = Demo()
+
+
+self — Instance Reference
+What is self?
+Refers to the current object (instance)
+Used to access instance variables and instance methods
+Passed automatically to instance methods
+cls — Class Reference
+What is cls?
+Refers to the class itself
+Used in class methods
+Passed automatically to methods decorated with @classmethod
+
+self refers to the current object instance, while cls refers to the class itself and is used in class methods.
+
+
+
+
+What it does
+Creates a new instance of the class
+Allocates memory for the object
+Called before __init__()
+Must return the newly created object
+Key points
+It is a static method (even though you don’t decorate it)
+Used mainly when:
+Subclassing immutable types (int, str, tuple)
+Implementing singletons
+Controlling object creation
+Syntax
+class MyClass:
+    def __new__(cls):
+        instance = super().__new__(cls)
+        return instance
+
+
+
+Subclassing int
+class MyInt(int):
+    def __new__(cls, value):
+        print("Inside __new__")
+        return super().__new__(cls, value)
+
+    def __init__(self, value):
+        print("Inside __init__")
+
+num = MyInt(5)
+Output
+Inside __new__
+Inside __init__
+Value assignment must happen in __new__() for immutable types
+
+
+
+
+
 
 
