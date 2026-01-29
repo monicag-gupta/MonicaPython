@@ -1165,6 +1165,25 @@ Hello Monica. How are you. How is everything
 
 
 
+import re
+
+str="Hello Monica, How are you, how is life"
+matchObj = re.match( r'(.*) how (.*)', str, re.I)
+print(matchObj.group())
+print(matchObj.group(1))
+print(matchObj.group(2))
+
+Notice the r at the start of the pattern. This is called a raw string literal. It changes how the string literal is interpreted. Such literals are stored as they appear.
+Output:
+Hello Monica, How are you, how is life
+Hello Monica, How are you,
+is life
+
+
+
+
+
+
 
 
 
