@@ -126,5 +126,26 @@ d.meow()
 
 _______________
 
+class Animal:
+    def __init__(self, name):
+        self.name = name
+        print(f"Animal created: {self.name}")
+ 
+class Dog(Animal):
+    def __init__(self, name, breed):
+        super().__init__(name)   # calls Animal's __init__
+        self.breed = breed
+        print(f"Dog breed: {self.breed}")
+ 
+d = Dog("Bruno", "Labrador")
+# Animal created: Bruno
+# Dog breed: Labrador
+
+
+__________________
+
+
+
+
 
 
