@@ -1301,6 +1301,55 @@ If the first character of the set is ^, all the characters that are not in the s
    # print(re.search(r'Number: [^5]', 'Number: 5').group())
    # Error: AttributeError: 'NoneType' object has no attribute 'group'
 
+\ - Backslash.
+Perhaps, the most diverse metacharacter!!
+If the character following the backslash is a recognized escape character, then the special meaning of the term is taken (Scenario 1). Else error message is thrown.
+\ can be used in front of all the metacharacters to remove their special meaning including \. Thus \\ means presence of a \ character (Scenario 2).
+
+   import re
+   ## (Scenario 1) This treats '\s' as an escape character, '\s' defines a space
+   print(re.search(r'Not a\sregular character', 'Not a regular character').group())
+   # Not a regular character
+   ## '\' is treated as an ordinary character, because '\r' is not a recognized escape character
+   print(re.search(r'Just a \regular character', 'Just a \regular character').group())
+   # egular character
+   ## (Scenario 2) '\s' is escaped using an extra `\` so its interpreted as a literal string '\s'
+   print(re.search(r'Just a \\sregular character', 'Just a \sregular character').group())
+   # Just a \sregular character
+
+
+There is a predefined set of special sequences that begin with '\' and are also very helpful when performing search and match. 
+\w - Lowercase 'w'. Matches any single letter, digit, or underscore.
+\W - Uppercase 'W'. Matches any character not part of \w (lowercase w).
+
+   import re
+   print("Lowercase w:", re.search(r'Co\wk\we', 'Cookie').group())
+   # Lowercase w: Cookie
+   
+   ## Matches any character except single letter, digit or underscore
+   print("Uppercase W:", re.search(r'C\Wke', 'C@ke').group())
+   # Uppercase W: C@ke
+   
+   ## Uppercase W won't match single letter, digit
+   print("Uppercase W won't match, and return:", re.search(r'Co\Wk\We', 'Cookie'))
+   # Uppercase W won't match, and return: None
+
+
+\s - Lowercase 's'. Matches a single whitespace character like: space, newline, tab, return.
+\S - Uppercase 'S'. Matches any character not part of \s (lowercase s).
+   import re
+   print("Lowercase s:", re.search(r'Eat\scake', 'Eat cake').group())
+   # Lowercase s: Eat cake
+   print("Uppercase S:", re.search(r'cook\Se', "Let's eat cookie").group())
+   # Uppercase S: cookie
+
+\d - Lowercase d. Matches decimal digit 0-9.
+\D - Uppercase d. Matches any character that is not a decimal digit.
+   import re
+   # Example for \d
+   print("How many cookies do you want? ", re.search(r'\d+', '100 cookies').group())
+   # How many cookies do you want?  100
+   # The + symbol used after the \d in the example above is used for repetition.
 
 
 
