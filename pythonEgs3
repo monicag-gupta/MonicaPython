@@ -687,11 +687,11 @@ def repeat(n):
         return wrapper
     return decorator
 
-@repeat(3)
+@repeat(3)   # repeat(3)(say_hi)
 def say_hi():
     print("Hi")
 
-say_hi()
+say_hi()    #repeat(3)(say_hi)() -> repeat(3) 's decorator(say_hi) -> wrapper()
 Call Chain
 say_hi → decorator → wrapper → func
 
