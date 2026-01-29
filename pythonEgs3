@@ -88,4 +88,43 @@ dog barking
 Animal Speaking
 
 
+_____________________
+
+
+class Animal:  
+    def speak(self):  
+        print("Animal Speaking")  
+
+#child class Dog inherits the base class Animal  
+
+class Dog(Animal):  
+    def bark(self):  
+        print("dog barking")
+    def walk(self):  
+        print("dog walking")  
+
+
+class Cat(Animal):  
+    def meow(self):  
+        print("cat meowing") 
+    def walk(self):  
+        print("cat walking")  
+
+
+class BabyAnimal(Cat, Dog):
+    pass
+
+d = BabyAnimal()  
+d.bark()  
+d.speak() 
+d.walk()
+d.meow() 
+
+
+
+
+
+_______________
+
+
 
