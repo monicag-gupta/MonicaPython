@@ -1245,6 +1245,65 @@ print("Phone Num : ", num)
 # Phone Num :  2004959559
 
 
+_
+
+import re
+
+phone = "2004-959-559 # This is Phone Number"
+
+# Delete Python-style comments
+num = re.sub(r'#.*$', "", phone)
+print("Phone Num : ", num)
+# Phone Num :  2004-959-559
+
+
+# Delete - character : replace - with ""
+num = re.sub(r'-', "", phone)
+print("Phone Num without hyphen : ", num)
+# Phone Num :  2004-959-559 
+
+# Remove anything other than digits
+num = re.sub(r'\D', "", phone)    
+print("Phone Num : ", num)
+# Phone Num :  2004959559
+
+
+
+________
+
+. - A period. Matches any single character except the newline character.
+   import re
+   print(re.search(r'Co.k.e', 'Cookie').group())
+   #Cookie
+^ - A caret. Matches the start of the string.
+This is helpful if you want to make sure a document/sentence starts with certain characters.
+   import re
+   print(re.search(r'^Eat', "Eat cake!").group())
+   #Eat
+$ - Matches the end of string.
+This is helpful if you want to make sure a document/sentence ends with certain characters.
+   import re
+   print(re.search(r'cake$', "Cake! Let's eat cake").group())
+   #cake
+
+[abc] - Matches a or b or c.
+[a-zA-Z0-9] - Matches any letter from (a to z) or (A to Z) or (0 to 9).
+Characters that are not within a range can be matched by complementing the set. 
+If the first character of the set is ^, all the characters that are not in the set will be matched.
+
+   import re
+   print(re.search(r'[0-6]', 'Number: 5').group())
+   #5
+   ## Matches any character except 5
+   print(re.search(r'Number: [^5]', 'Number: 0, Number: 5').group())
+   #Number: 0
+   ## This will not match and hence a NONE value will be returned
+   # print(re.search(r'Number: [^5]', 'Number: 5').group())
+   # Error: AttributeError: 'NoneType' object has no attribute 'group'
+
+
+
+
 
 
 
