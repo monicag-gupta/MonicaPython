@@ -303,6 +303,35 @@ Total Bus fare is: 5500.0
 
 _________________________
 
+Encapsulation:
 
+class BankAccount:
+    def __init__(self, owner, balance):
+        self.owner = owner
+        self.__balance = balance  # Private attribute
+
+    # Getter
+    @property
+    def balance(self):
+        return self.__balance
+
+    # Setter
+    @balance.setter
+    def balance(self, amount):
+        if amount >= 0:
+            self.__balance = amount
+        else:
+            print("Balance cannot be negative!")
+
+# Usage
+account = BankAccount("Alice", 1000)
+print(account.balance)  # Access via getter
+account.balance = 2000  # Update via setter
+print(account.balance)
+account.balance = -500   # Invalid, setter prevents it
+print(account.balance)
+
+
+______________
 
 
