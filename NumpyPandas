@@ -1,0 +1,31 @@
+http://numpy.scipy.org/
+NumPy is an essential library for any scientific or numerical computations in Python. It provides support for arrays, matrices, and various mathematical functions that are efficient and easy to use. 
+Basic array creation, arithmetic operations, broadcasting, and matrix multiplication are fundamental to working with NumPy.
+NumPy has many of the features of Matlab, in a free, multiplatform program. It also allows you to do intensive computing operations in a simple way
+Numeric Module: Array Constructors
+ones, zeros, identity
+arrayrange
+LinearAlgebra Module: Solvers
+Singular Value Decomposition
+Eigenvalue, Eigenvector
+Inverse
+Determinant
+Linear System Solver
+
+
+
+
+
+Go to C:\Users\monica\AppData\Local\Programs\Python\Python312\Scripts
+
+Open cmd/Terminal
+Sudo or type:
+
+> pip install numpy
+
+A lot of packages will be downloaded.. 
+
+
+
+
+
