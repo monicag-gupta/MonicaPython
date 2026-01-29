@@ -1420,6 +1420,203 @@ Adding ? after the qualifier makes it perform the match in a non-greedy or minim
    #<h1>
 
 
+______________
+
+
+Write a Python program that matches a sentence containing 'z' in the middle of any of it’s word, the char should not be at the start or end of any word.
+Write a Python program to find the substrings within a string. Go to the editor
+Sample text :
+'Python exercises, PHP exercises, C# exercises'
+Pattern :
+'exercises'
+Note: There are 3 instances of exercises in the input string.
+Replace first occurrence of 5 with five for the given string.
+'They ate 5 apples and 5 oranges'
+
+
+
+
+____
+
+Email Validation (User Registration)
+Scenario : Validate user input before saving to DB.
+import re
+
+email = "user123@gmail.com"
+
+pattern = r"^[\w\.-]+@[\w\.-]+\.\w+$"
+
+if re.match(pattern, email):
+    print("Valid email")
+else:
+    print("Invalid email")
+Used in signup forms, APIs
+
+
+
+
+________
+
+Phone Number Validation (India / International)
+import re
+
+phone = "+91-9876543210"
+
+pattern = r"^\+91[-\s]?[6-9]\d{9}$"
+
+print("Valid" if re.match(pattern, phone) else "Invalid")
+Telecom, CRM systems
+
+
+
+
+_
+
+Password Strength Checker
+import re
+
+password = "Pass@123"
+
+pattern = r"^(?=.*[A-Z])(?=.*[a-z])(?=.*\d)(?=.*[@#$!]).{8,}$"
+
+print("Strong" if re.match(pattern, password) else "Weak")
+Security systems
+
+____
+
+Log File Analysis 
+Extract ERROR logs
+import re
+
+log = "2024-01-10 ERROR Disk full"
+
+if re.search(r"ERROR", log):
+    print("Error found:", log)
+Monitoring tools
+
+
+____
+
+Extract Dates from Text
+import re
+
+text = "Events on 12/05/2024 and 01/01/2025"
+
+dates = re.findall(r"\d{2}/\d{2}/\d{4}", text)
+
+print(dates)
+Data mining, ETL pipelines
+
+
+__________
+
+
+URL Validation / Extraction
+import re
+
+text = "Visit https://openai.com or http://example.org"
+
+urls = re.findall(r"https?://\S+", text)
+
+print(urls)
+Web scraping, crawlers
+
+
+___________
+
+
+Search & Replace (Text Cleaning)
+Remove extra spaces
+import re
+
+text = "Python   is    awesome"
+
+clean = re.sub(r"\s+", " ", text)
+
+print(clean)
+Natural Language Processing (NLP) preprocessing
+
+
+_____
+
+
+Extract Numbers from Text
+import re
+
+text = "Order 45 items for 1200 rupees"
+
+numbers = re.findall(r"\d+", text)
+
+print(numbers)
+Billing systems
+
+
+
+
+____
+
+
+
+Username Validation
+import re
+
+username = "user_123"
+
+pattern = r"^[a-zA-Z][a-zA-Z0-9_]{4,15}$"
+
+print("Valid" if re.match(pattern, username) else "Invalid")
+Login systems
+
+
+
+________
+
+File Extension Filter
+import re
+
+files = ["data.csv", "image.png", "script.py"]
+
+py_files = [f for f in files if re.search(r"\.py$", f)]
+
+print(py_files)
+Automation scripts
+
+
+
+
+_____
+
+Extract Words with Special Rules
+Words containing z (not start/end)
+import re
+
+text = "pizza buzz lazy maze"
+
+matches = re.findall(r"\b\w+z\w+\b", text)
+
+print(matches)
+Pattern-based searching
+
+
+
+________
+
+
+Replace Sensitive Data (Masking)
+import re
+
+text = "My credit card is 1234-5678-9876-5432"
+
+masked = re.sub(r"\d{4}-\d{4}-\d{4}-\d{4}", "XXXX-XXXX-XXXX-XXXX", text)
+
+print(masked)
+Compliance & security
+
+
+
+___________
+
+
 
 
 
