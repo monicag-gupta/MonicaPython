@@ -751,4 +751,199 @@ ___________________
 
 
 
+def repeat(n):
+    def decorator(func):
+        def wrapper():
+            for _ in range(n):
+                func()
+        return wrapper
+    return decorator
+
+@repeat(2)
+def say_hi():
+    print("Hi")
+
+
+dec=repeat(3)
+wraper=dec(say_hi)
+wraper()  # inside the wrapper: say_hi is executed: 3 
+# each time say_hi() -> it will run twice
+
+#totally: 6 times
+
+
+# say_hi()
+
+@repeat(3)
+@repeat(2)
+def say_hi2():
+    print("Hi2")
+
+say_hi2()
+
+
+
+_________________________
+
+
+Decorator Use CasesLogging Decorator
+
+def logger(func):
+    """
+    A decorator that logs the function name
+    and arguments before calling the function.
+    """
+    def wrapper(*args, **kwargs):
+        print(f"[LOG] Calling function: {func.__name__}")
+        print(f"[LOG] Arguments: args={args}, kwargs={kwargs}")
+
+        result = func(*args, **kwargs)   # Call the original function
+
+        print(f"[LOG] Function {func.__name__} returned: {result}")
+        return result
+
+    return wrapper
+
+# Using the Decorator
+@logger
+def add(a, b):
+    return a + b
+
+@logger
+def greet(name):
+    return f"Hello, {name}"
+
+# Running the Code
+add(10, 20)
+print()
+greet("Jay")
+
+
+_______________
+
+
+Decorator Use CasesTiming Function Execution 
+
+
+import time
+from functools import wraps
+
+def timer(func):
+    """
+    Decorator that measures and prints
+    the execution time of a function.
+    """
+    @wraps(func)
+    def wrapper(*args, **kwargs):
+        start = time.time()          # Start time
+        result = func(*args, **kwargs)  # Call original function
+        end = time.time()            # End time
+        print(f"Execution time of {func.__name__}: {end - start:.6f} seconds")
+        return result                # Return original result
+
+    return wrapper
+
+# Using the Decorator
+@timer
+def slow_add(a, b):
+    time.sleep(1)   # Simulate slow computation
+    return a + b
+
+@timer
+def fast_task():
+    return sum(range(1000))
+
+#Running the Code
+result1 = slow_add(10, 20)
+print("Result:", result1)
+
+print()
+
+result2 = fast_task()
+print("Result:", result2)
+
+
+
+Output:
+Execution time of slow_add: 1.000443 seconds
+Result: 30
+
+Execution time of fast_task: 0.000111 seconds
+Result: 499500
+
+
+
+_____________
+
+Decorator Use CasesAuthentication / Authorization Decorator
+
+from functools import wraps
+
+def requires_login(func):
+    """
+    Decorator that allows access only
+    if the user is logged in.
+    """
+    @wraps(func)
+    def wrapper(user, *args, **kwargs):
+        if not user.get("logged_in"):
+            raise PermissionError("Login required")
+        return func(user, *args, **kwargs)
+
+    return wrapper
+
+# Function Protected by Decorator
+@requires_login
+def view_dashboard(user):
+    return f"Welcome {user['username']} to your dashboard!"
+
+# Running the Code
+
+# Logged-in user
+user1 = {
+    "username": "jay",
+    "logged_in": True
+}
+
+# Not logged-in user
+user2 = {
+    "username": "guest",
+    "logged_in": False
+}
+
+# Authorized access
+print(view_dashboard(user1))
+
+print()
+
+# Unauthorized access
+try:
+    print(view_dashboard(user2))
+except PermissionError as e:
+    print("Access denied:", e)
+
+
+
+___________
+
+
+Decorator Use CasesUpper Case Function Decorator
+
+
+def uppercase(func):
+    def wrapper():
+        result = func()
+        return result.upper()
+    return wrapper
+
+@uppercase
+def message():
+    return "hello world"
+
+print(message())   # HELLO WORLD
+
+
+
+____________________
+
 
