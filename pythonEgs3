@@ -611,3 +611,26 @@ print("End of program")
 
 
 ___________________________
+
+
+
+A closure is:
+A function that remembers variables from its enclosing scope, even after that scope is gone.
+Basic Closure Example
+def outer(msg):
+    def inner():
+        print(msg)
+    return inner
+
+f = outer("Hello")
+f()      # Hello
+msg is remembered even after outer() finishes.
+Why Closures Matter
+Data hiding
+Function factories
+Decorators
+Lightweight alternatives to classes
+
+
+
+
