@@ -367,3 +367,135 @@ print("Rectangle Perimeter:", rect.perimeter())
 #print("Shape Area:", sh.area())
 #print("Shape Perimeter:", sh.perimeter())
 
+
+
+
+_________________________________________________
+
+
+
+Pillars:
+
+from abc import ABC, abstractmethod
+
+# -----------------------------
+# Abstraction & Encapsulation
+# -----------------------------
+class Vehicle(ABC):  # Abstract class
+    def __init__(self, brand, max_speed):
+        self._brand = brand      # Encapsulated (protected)
+        self.__max_speed = max_speed  # Encapsulated (private)
+
+    @abstractmethod
+    def drive(self):
+        """Abstract method: Must be implemented by subclasses"""
+        pass
+
+    # Getter for private variable
+    @property
+    def max_speed(self):
+        return self.__max_speed
+
+    # Setter for private variable
+    @max_speed.setter
+    def max_speed(self, speed):
+        if speed > 0:
+            self.__max_speed = speed
+        else:
+            print("Speed must be positive!")
+
+# -----------------------------
+# Inheritance & Polymorphism
+# -----------------------------
+class Car(Vehicle):  # Inherits from Vehicle
+    def __init__(self, brand, max_speed, doors):
+        super().__init__(brand, max_speed)
+        self.doors = doors
+
+    # Method Overriding (Polymorphism)
+    def drive(self):
+        print(f"{self._brand} car is driving at {self.max_speed} km/h with {self.doors} doors.")
+
+class Bike(Vehicle):
+    def drive(self):
+        print(f"{self._brand} bike is riding at {self.max_speed} km/h.")
+
+# -----------------------------
+# Using the classes (Polymorphism in action)
+# -----------------------------
+vehicles = [Car("Toyota", 180, 4), Bike("Yamaha", 120)]
+
+for v in vehicles:
+    v.drive()  # Polymorphic call
+
+
+
+
+
+________________
+
+
+Composition (Has-A Relationship)
+
+class Engine:
+    def start(self):
+        print("Engine started")
+
+class Car:
+    def __init__(self):
+        self.engine = Engine()  # Composition: Car HAS-A Engine
+
+    def start_car(self):
+        self.engine.start()
+        print("Car is ready to go")
+
+my_car = Car()
+my_car.start_car()
+
+_________________
+
+
+Aggregation (Weak Has-A Relationship)
+
+class Student:
+    def __init__(self, name):
+        self.name = name
+
+class Team:
+    def __init__(self, members):
+        self.members = members  # Aggregation
+
+student1 = Student("Alice")
+student2 = Student("Bob")
+
+team = Team([student1, student2])
+for member in team.members:
+    print(member.name)
+
+
+
+___________
+
+
+Association (General Relationship)
+
+
+class Driver:
+    def __init__(self, name):
+        self.name = name
+
+    def drive(self, vehicle):
+        print(f"{self.name} is driving {vehicle.model}")
+
+class Vehicle:
+    def __init__(self, model):
+        self.model = model
+
+driver = Driver("John")
+car = Vehicle("Toyota")
+
+driver.drive(car)  # Association: Driver uses Vehicle
+
+
+
+
