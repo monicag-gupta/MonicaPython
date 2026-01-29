@@ -285,3 +285,15 @@ v3=Vector(7,8)
 print (v1 + v2 + v3)  # tv= v1.__add__(v2); tv.__add__(v3)
 #(v1.add(v2).add(v3))
 
+_______________________
+
+
+Write a Python class to convert an integer to a roman numeral and a roman numeral to an integer
+Write a Python class to reverse a string word by word.Input string : 'hello world'Expected Output : 'world hello'
+
+
+_________________________
+
+
+
+
