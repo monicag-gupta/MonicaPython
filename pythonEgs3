@@ -696,6 +696,58 @@ Call Chain
 say_hi → decorator → wrapper → func
 
 
+_________________________
+
+wraps is a decorator for decorators.
+It is used to preserve the original function’s metadata when you wrap it with another function.
+@wraps(func) copies these attributes:
+__name__ : Function name
+__doc__ : Docstring
+__module__ :  Module name
+__annotations__ : Type hints
+__wrapped__ : Reference to original function
+
+
+
+______________________
+
+def logger(func):
+    def wrapper(*args, **kwargs):
+        print("Calling function")
+        return func(*args, **kwargs)
+    return wrapper
+
+@logger
+def add(a, b):
+    """Adds two numbers"""
+    return a + b
+
+print(add.__name__)
+print(add.__doc__)
+
+
+_________________
+
+
+from functools import wraps
+
+def logger(func):
+    @wraps(func)
+    def wrapper(*args, **kwargs):
+        print("Calling function")
+        return func(*args, **kwargs)
+    return wrapper
+
+@logger
+def add(a, b):
+    """Adds two numbers"""
+    return a + b
+
+print(add.__name__)
+print(add.__doc__)
+
+
+___________________
 
 
 
