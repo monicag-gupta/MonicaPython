@@ -585,4 +585,29 @@ demo()
 print("End of program")
 
 
+__________________________
 
+
+class LifeCycle:
+    def __init__(self):
+        print("Object created")
+
+    def abc():
+        print("working of obj")
+
+    def __del__(self):
+        print("Object destroyed")
+
+def demo():
+    obj = LifeCycle()  # creates an object
+    # del obj
+    print("Object in use")
+    obj.abc()
+# scope of object ends, destroyed
+demo()
+
+print("End of program")
+
+
+
+___________________________
