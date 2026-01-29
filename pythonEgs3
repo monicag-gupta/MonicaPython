@@ -578,9 +578,9 @@ class LifeCycle:
         print("Object destroyed")
 
 def demo():
-    obj = LifeCycle()
+    obj = LifeCycle()  # creates an object
     print("Object in use")
-
+# scope of object ends, destroyed
 demo()
 print("End of program")
 
