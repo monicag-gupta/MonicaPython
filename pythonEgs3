@@ -1202,6 +1202,33 @@ This method returns all matching subgroups in a tuple (empty if there weren't an
 
 
 
+import re
+
+str="Hello Monica, How are you, how is life"
+
+matchObj = re.search( r'(.*) how (.*)', str, re.I)
+print(matchObj.group())
+# Hello Monica, How are you, how is life
+print(matchObj.group(1))
+# Hello Monica, How are you,
+print(matchObj.group(2))
+# is life
+
+matchObj = re.search( r'(.*) how (.*) (.*)', str, re.I)
+print(matchObj.group())
+# Hello Monica, How are you, how is life
+print(matchObj.group(1))
+# Hello Monica, How are you,
+print(matchObj.group(2))
+# is
+print(matchObj.group(3))
+# life
+
+
+
+
+_________
+
 
 
 
