@@ -665,10 +665,12 @@ def greet():
     print("Hello")
 
 greet()
-Output
+
+Output:
 Before function
 Hello
 After function
+
 wrapper() is a closure
 
 
