@@ -1181,6 +1181,28 @@ is life
 
 
 
+This function searches for first occurrence of RE pattern within string with optional flags.
+Here is the syntax for this function −
+re.search(pattern, string, flags=0)
+
+Here is the description of the parameters −
+pattern
+This is the regular expression to be matched.
+string
+This is the string, which would be searched to match the pattern anywhere in the string.
+flags
+You can specify different flags using bitwise OR (|). These are modifiers, which are listed in the table below.
+
+The re.search function returns a match object on success, none on failure. We use group(num) or groups() function of match object to get matched expression.
+group(num=0)
+This method returns entire match (or specific subgroup num)
+groups()
+This method returns all matching subgroups in a tuple (empty if there weren't any)
+
+
+
+
+
 
 
 
