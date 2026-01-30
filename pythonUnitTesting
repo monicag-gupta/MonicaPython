@@ -411,4 +411,34 @@ def test_get_greeting_with_stub():
 
 
 
+SPY:
+
+# Spy Object – Simple Example
+# Code under test
+def process(reader):
+    return reader.read().upper()
+
+# Spy (using Mock)
+from unittest.mock import Mock
+
+def test_process_with_spy():
+    reader = Mock()                 # spy
+    reader.read.return_value = "hello"
+    result = process(reader)
+    assert result == "HELLO"
+    reader.read.assert_called_once()   # spying on behavior
+
+# Why this is a Spy
+# It records method calls
+# Verifies interaction (read() called once)
+# Observes behavior, not just output
+
+
+
+
+
+
+
+
+
 
