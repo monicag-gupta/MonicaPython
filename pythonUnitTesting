@@ -594,6 +594,29 @@ print(calc.add(2, 3))   # 100 (not 5!)
 
 
 
+Method-Level Parameterization. Concept
+Parameters are supplied to a single test method
+Each input combination becomes a separate test case
+A) Method-Level Parameterization using unittest : Using subTest (Standard way)
+import unittest
+def add(a, b):
+    return a + b
+class TestAdd(unittest.TestCase):
+    def test_add(self):
+        test_data = [
+            (1, 2, 3),
+            (5, 5, 10),
+            (-1, 1, 0)
+        ]
+        for a, b, expected in test_data:
+            with self.subTest(a=a, b=b):
+                self.assertEqual(add(a, b), expected)
+if __name__ == "__main__":
+    unittest.main()
+
+
+
+
 
 
 
