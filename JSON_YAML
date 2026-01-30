@@ -59,6 +59,23 @@ Install PyYAML:
 pip install pyyaml
 
 
+Basic YAML File (config.yaml):
+
+app:
+  name: Calculator
+  version: 1.0
+  debug: true
+
+database:
+  host: localhost
+  port: 5432
+  username: admin
+  password: secret
+
+features:
+  - add
+  - subtract
+  - multiply
 
 
 
