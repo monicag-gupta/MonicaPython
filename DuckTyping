@@ -33,3 +33,72 @@ def process(obj):
 process(FileSource())     #  Works
 process(NetworkSource())  #  Works
 process(EmptySource())    #  Falls back to handler
+
+
+
+
+
+class FileSource:
+    def read(self):
+        return "Reading data from file"
+
+class NetworkSource:
+    def read(self):
+        return "Reading data from network"
+
+class EmptySource:
+    pass   # No read() method
+
+def handle_missing():
+    """
+    Called when the object does not support the expected behavior.
+    """
+    print("Error: Object does not support 'read()'")
+
+def process(obj):
+    """
+    Process an object only if it has a read() method.
+    Uses LBYL (Look Before You Leap) approach.
+    """
+    if hasattr(obj, "read"):
+        data = obj.read()
+        print("Data:", data)
+    else:
+        handle_missing()
+
+# ---- Program execution ----
+process(FileSource())     #  Works
+process(NetworkSource())  #  Works
+process(EmptySource())    #  Falls back to handler
+
+
+
+
+
+
+# import pytest
+def process(reader):
+    """
+    Expects an object that provides a read() method.
+    """
+    data = reader.read()
+    return data.upper()
+class FakeReader:
+    def read(self):
+        return "hello world"
+def test_process_with_valid_reader():
+    reader = FakeReader()
+    result = process(reader)
+    assert result == "HELLO WORLD"
+class InvalidReader:
+    pass
+def test_process_with_invalid_reader():
+    reader = InvalidReader()
+    with pytest.raises(AttributeError):
+        process(reader)
+if __name__ == "__main__":
+    test_process_with_valid_reader()
+    try:
+        test_process_with_invalid_reader()
+    except AttributeError:
+        print("Caught AttributeError manually")
