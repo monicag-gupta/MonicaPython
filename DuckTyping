@@ -1,0 +1,35 @@
+class FileSource:
+    def read(self):
+        return "Reading data from file"
+
+class NetworkSource:
+    def read(self):
+        return "Reading data from network"
+
+class EmptySource:
+    pass   # No read() method
+
+def handle_missing():
+    """
+    Called when the object does not support the expected behavior.
+    """
+    print("Error: Object does not support 'read()'")
+
+def process(obj):
+    """
+    Process any object that provides a read() method.
+    Uses EAFP style instead of type checking.
+    """
+    try:
+        # Attempt to use the object's behavior
+        data = obj.read()
+        print("Data:", data)
+
+    except AttributeError:
+        # Happens if obj has no read() method
+        handle_missing()
+
+# ---- Program execution ----
+process(FileSource())     #  Works
+process(NetworkSource())  #  Works
+process(EmptySource())    #  Falls back to handler
