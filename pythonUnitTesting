@@ -63,3 +63,14 @@ if __name__ == "__main__":
     unittest.main()
 
 
+
+5. Cmd Line Options and Test Discovery
+Run a test file
+python -m unittest test_app.py
+Verbose output
+python -m unittest -v test_app.py
+Test discovery (recommended)
+python -m unittest discover
+With pattern:
+python -m unittest discover -s . -p "test_*.py"
+
