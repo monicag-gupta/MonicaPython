@@ -738,3 +738,35 @@ Used for custom runners
 
 
 
+B) Enhanced Reporting (unittest)
+Using verbosity=2
+unittest.TextTestRunner(verbosity=2)
+Gives:
+Test names
+Clear status
+Error trace
+C) Reporting in pytest (Much richer)
+FAILED test_math.py::test_divide
+assert 5 == 4
+Extra pytest reporting options
+pytest --tb=short     # Short traceback
+pytest --tb=long      # Full traceback
+pytest --durations=5  # Slowest tests
+pytest --maxfail=2
+
+
+
+
+
+def test_add():
+    assert 2 + 2 == 4
+
+def test_subtract():
+    assert 5 - 3 == 1   #  fail
+
+def test_multiply():
+    assert 2 * 3 == 5   #  fail
+
+def test_divide():
+    assert 10 / 2 == 5  # will NOT run if maxfail=2
+
