@@ -569,6 +569,28 @@ def test_greet():
 
 
 
+# Simple Monkey Patch Example
+# Original code
+class Calculator:
+    def add(self, a, b):
+        return a + b
+
+# Monkey patch it
+def fake_add(self, a, b):
+    return 100
+
+Calculator.add = fake_add   # monkey patch
+
+# Use it
+calc = Calculator()
+print(calc.add(2, 3))   # 100 (not 5!)
+
+# What happened?
+# Original add() replaced at runtime
+# All Calculator objects now use fake_add
+# Change stays until program ends
+
+
 
 
 
