@@ -50,3 +50,15 @@ with open('data.json', 'w') as file:
 
 
 
+
+
+
+Python does not support YAML natively.
+Install PyYAML:
+
+pip install pyyaml
+
+
+
+
+
