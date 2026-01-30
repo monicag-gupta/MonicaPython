@@ -712,4 +712,29 @@ class TestMultiply:
 
 
 
+Test Execution
+What is Test Execution?
+Test execution is the process of:
+Discovering tests
+Running them
+Capturing results (pass / fail / error / skip)
+A) Test Execution in unittest
+Run a single test file
+python -m unittest test_math.py
+Run with verbose output
+python -m unittest -v test_math.py
+Test discovery
+python -m unittest discover
+Programmatic Execution
+import unittest
+loader = unittest.TestLoader()
+suite = loader.discover(".")
+runner = unittest.TextTestRunner(verbosity=2)
+runner.run(suite)
+Used in CI pipelines
+Used for custom runners
+
+
+
+
 
