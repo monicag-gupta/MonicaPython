@@ -539,6 +539,34 @@ def test_greet():
 
 
 
+app.py
+
+def greet():
+    return "Hello"
+
+
+
+
+
+# Example (function patch)
+# utils.py
+# def greet():
+#     return "Hello"
+
+# Test
+from unittest.mock import patch
+# from utils import greet
+import app
+
+def test_greet():
+    # with patch("utils.greet", return_value="Hi"):
+    with patch("app.greet", return_value="Hi"):
+        assert app.greet() == "Hi"
+
+# patch temporarily replaces a real object with a fake one during testing.
+
+
+
 
 
 
