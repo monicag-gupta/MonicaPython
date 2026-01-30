@@ -906,3 +906,49 @@ pytest test_assert_math.py::test_assert* --html=report.html
 pytest -v --junitxml=results.xml
 
 
+
+
+
+
+___________
+
+TDD
+
+What is TDD?
+Test Driven Development (TDD) is a software development practice where:
+Tests are written before the actual production code
+Development is guided by tests, not the other way around.
+TDD Fundamentals
+Core Principles
+Write a failing test first
+Write minimum code to pass the test
+Improve the code without breaking tests
+Key Idea
+Code exists only to satisfy tests
+TDD Cycle Overview
+Write Test → Run Test → Fail → Write Code → Pass → Refactor → Repeat
+
+
+
+Red (Failing Test)
+Write a test for a feature that does not exist
+Test must fail
+def test_add():
+    assert add(2, 3) == 5  # add() not yet implemented
+Result:
+NameError → RED
+Green (Make it Pass)
+Write the simplest possible code
+No optimization
+def add(a, b):
+    return a + b
+Result:
+Test passes → GREEN
+Refactor (Improve Design)
+Clean code; Remove duplication; Improve readability
+Tests must stay green
+def add(a: int, b: int) -> int:
+    return a + b
+No behavior change
+Better clarity
+
