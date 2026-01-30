@@ -288,7 +288,12 @@ def test_process_with_fake():
 
 
 
-pip inistall pytest
+pip install pytest
+
+pytest .\test_app.py
+
+
+
 
 
 
