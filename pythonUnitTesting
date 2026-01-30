@@ -286,3 +286,9 @@ def test_process_with_fake():
 # Fast, Reliable, No setup required
 
 
+
+
+pip inistall pytest
+
+
+
