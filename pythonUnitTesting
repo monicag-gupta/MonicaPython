@@ -952,3 +952,10 @@ def add(a: int, b: int) -> int:
 No behavior change
 Better clarity
 
+
+
+
+TDD Cycle Summary
+🔴 RED     → test fails (feature missing)
+🟢 GREEN   → simplest code to pass
+🔵 REFACTOR → improve design safely
