@@ -295,25 +295,6 @@ pytest .\test_app.py
 
 
 
-Mock (Test Double)
-Real code we want to test
-def process(reader):
-    return reader.read().upper()
-Use a Mock (Behavior-based testing)
-Simple Mock Example (using unittest.mock)
-from unittest.mock import Mock
-def test_process_with_mock():
-    reader = Mock()
-    reader.read.return_value = "hello"
-    result = process(reader)
-    assert result == "HELLO"
-    reader.read.assert_called_once()
-Why Mock is useful
-Avoid slow dependencies
-Verify behavior (method called or not)
-Keep tests fast and isolated
-
-
 
 
 
