@@ -770,3 +770,48 @@ def test_multiply():
 def test_divide():
     assert 10 / 2 == 5  # will NOT run if maxfail=2
 
+
+
+
+
+_________
+
+
+
+
+import pytest
+
+# ---------------- PASS ----------------
+# Test ran successfully, All assertions passed
+def test_pass():
+    assert 1 + 1 == 2
+
+# ---------------- FAIL ----------------
+# Assertion failed, Test logic ran completely
+def test_fail():
+    assert 2 * 2 == 5
+
+# ---------------- ERROR ----------------
+# Unexpected exception occurred, Test didn’t reach assertion
+def test_error():
+    result = 10 / 0   # ZeroDivisionError occurs before assertion
+    assert result == 5
+
+# ---------------- SKIP ----------------
+# Test intentionally skipped, Common for unimplemented features or unsupported platforms
+@pytest.mark.skip(reason="Feature not implemented yet")
+def test_skip():
+    assert True
+
+# ---------------- XFAIL ----------------
+# Test expected to fail, Failure does not break the build
+@pytest.mark.xfail(reason="Known bug: division logic incorrect")
+def test_xfail():
+    assert 10 / 3 == 3   # Will fail, but is expected
+
+# ---------------- XPASS ----------------
+# XPASS (Unexpected Pass), If an xfail test passes, pytest reports XPASS
+@pytest.mark.xfail
+def test_xpass():
+    assert True
+
