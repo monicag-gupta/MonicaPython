@@ -74,3 +74,80 @@ python -m unittest discover
 With pattern:
 python -m unittest discover -s . -p "test_*.py"
 
+
+
+
+6. Fixtures in Tests
+Fixtures handle setup and cleanup.
+Method-level fixtures
+class TestWithFixtures(unittest.TestCase):
+    def setUp(self):
+        print("Setup before each test")
+    def tearDown(self):
+        print("Cleanup after each test")
+    def test_one(self):
+        self.assertTrue(True)
+Class-level fixtures
+class TestClassFixtures(unittest.TestCase):
+    @classmethod
+    def setUpClass(cls):
+        print("Runs once before all tests")
+    @classmethod
+    def tearDownClass(cls):
+        print("Runs once after all tests")
+
+
+
+
+
+hello.py
+
+def add(a, b):
+    return a + b
+
+def divide(a, b):
+    if b == 0:
+        raise ValueError("Division by zero")
+    return a / b
+
+
+
+
+
+import unittest
+from hello import add, divide
+
+class TestMathOperations(unittest.TestCase):
+    def test_add(self):
+        print("Testing add...")
+        self.assertEqual(add(2, 3), 5)
+    def test_divide(self):
+        print("Testing divide...")
+        self.assertEqual(divide(10, 2), 5)
+    def test_divide_by_zero(self):
+        print("Testing divide by 0...")
+        with self.assertRaises(ValueError):
+            divide(10, 0)
+    def setUp(self):
+        print("Setup before each test")
+    def tearDown(self):
+        print("Cleanup after each test")
+    def test_one(self):
+        print("Testing own function simple...")
+        self.assertTrue(True)
+    @classmethod
+    def setUpClass(cls):
+        print("Runs once before all tests")
+    @classmethod
+    def tearDownClass(cls):
+        print("Runs once after all tests")
+    def test_even_numbers(self):
+        print("Testing Own test function even nos...")
+        for num in [2, 4, 6, 8]:
+            with self.subTest(num=num):
+                self.assertEqual(num % 2, 0)
+
+if __name__ == "__main__":
+    unittest.main()
+
+
