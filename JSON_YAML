@@ -118,3 +118,24 @@ with open("output.yaml", "w") as file:
     yaml.dump(data, file, default_flow_style=False)
 
 
+
+
+Updating an Existing YAML File: update_yaml.py
+
+
+import yaml
+
+# Read existing YAML
+with open("config.yaml", "r") as file:
+    config = yaml.safe_load(file)
+
+# Modify values
+config["app"]["debug"] = False
+config["database"]["port"] = 3307
+config["features"].append("divide")
+
+# Write back to YAML
+with open("config.yaml", "w") as file:
+    yaml.dump(config, file, default_flow_style=False)
+
+
