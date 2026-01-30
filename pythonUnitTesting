@@ -900,3 +900,6 @@ def test_xfail():
 
 pytest --html=report.html
 
+pytest -v --junitxml=results.xml
+
+
