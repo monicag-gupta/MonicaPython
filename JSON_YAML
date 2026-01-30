@@ -96,3 +96,25 @@ print(config["database"]["host"])   # localhost
 print(config["features"][0])        # add
 
 
+
+
+Writing YAML to a File: write_yaml.py
+
+import yaml
+
+data = {
+    "app": {
+        "name": "Inventory System",
+        "version": 2.0,
+        "debug": False
+    },
+    "database": {
+        "host": "127.0.0.1",
+        "port": 3306
+    }
+}
+
+with open("output.yaml", "w") as file:
+    yaml.dump(data, file, default_flow_style=False)
+
+
