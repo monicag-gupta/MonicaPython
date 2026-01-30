@@ -354,3 +354,29 @@ def test_process_with_mock():
 
 
 
+
+A Dummy object is passed to a function but is never actually used.
+
+
+# Dummy Object – Simple Example
+# Code under test
+def send_message(service, message):
+    return "Message sent"
+# service is required as a parameter but not used at all.
+
+# Dummy object
+class DummyService:
+    pass
+
+# Test using Dummy
+def test_send_message_with_dummy():
+    dummy = DummyService()   # dummy object
+    result = send_message(dummy, "Hello")
+    assert result == "Message sent"
+# Why this is a Dummy
+# Passed only to satisfy the function signature
+#  No behavior
+#  Never called
+#  No logic inside
+
+
