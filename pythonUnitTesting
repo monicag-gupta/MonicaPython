@@ -412,6 +412,8 @@ def test_get_greeting_with_stub():
 
 
 SPY:
+A Spy records how a method was used while allowing the real behavior to run.
+
 
 # Spy Object – Simple Example
 # Code under test
@@ -435,8 +437,82 @@ def test_process_with_spy():
 
 
 
+patch() replaces objects temporarily during tests.
+Example: Mocking an API Call : app.py
+import requests
+def get_status():
+    response = requests.get("https://api.example.com")
+    return response.status_code
+test_app.py
+import unittest
+from unittest.mock import patch
+from app import get_status
+class TestAPI(unittest.TestCase):
+    @patch("app.requests.get")
+    def test_get_status(self, mock_get):
+        mock_get.return_value.status_code = 200
+        result = get_status()
+        self.assertEqual(result, 200)
+        mock_get.assert_called_once()
+Patch where it is used, not where it is defined.
 
 
+
+pip install requests
+
+
+import requests
+def get_status():
+    response = requests.get("https://api.example.com")
+    return response.status_code
+#If the function were in service.py, then you MUST patch: @patch("service.requests.get")
+
+import unittest
+from unittest.mock import patch
+
+class TestAPI(unittest.TestCase):
+    @patch("requests.get")
+    def test_get_status(self, mock_get):  # requests.get = Mock()
+        mock_get.return_value.status_code = 200  #Configure the mock
+        #When requests.get() is called…Return a fake response object, Whose status_code is 200
+        #So this line inside get_status():response = requests.get(...) actually becomes: response = mock_get()
+        result = get_status()
+        # get_status() is NOT mocked Only its dependency (requests.get) is mocked. This is correct unit testing
+        self.assertEqual(result, 200)
+        mock_get.assert_called_once()
+
+
+
+
+
+
+
+# Simple patch Example
+# Code under test
+# service.py
+import time
+
+def get_current_time():
+    return time.time()
+
+# Test using patch
+from unittest.mock import patch
+# from service import get_current_time
+
+def test_get_current_time():
+    # with patch("service.time.time", return_value=12345):
+    with patch("time.time", return_value=12345):
+        result = get_current_time()
+        assert result == 12345
+
+# What just happened?
+# time.time() is real code
+# patch("service.time.time") replaces it
+# Only active inside the with block
+# After the block → original behavior restored
+# Key rule: Patch where it is USED, not where it is defined
+# patch("service.time.time")  # correct
+# patch("time.time")          # wrong
 
 
 
