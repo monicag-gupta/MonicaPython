@@ -663,4 +663,53 @@ def test_add(a, b, expected):
 
 
 
+Concept
+Entire test class is run multiple times
+Each class instance gets different parameters
+A) Class-Level Parameterization in pytest : Example
+import pytest
+def multiply(a, b):
+    return a * b
+@pytest.mark.parametrize(
+    "a,b,expected",
+    [
+        (2, 3, 6),
+        (5, 5, 25),
+        (1, 0, 0),
+    ]
+)
+class TestMultiply:
+    def test_multiply(self, a, b, expected):
+        assert multiply(a, b) == expected
+    def test_positive_result(self, a, b, expected):
+        assert expected >= 0
+What happens?
+Class is instantiated once per parameter set
+All methods share the same parameters
+
+
+
+
+
+import pytest
+def multiply(a, b):
+    return a * b
+@pytest.mark.parametrize(
+    "a,b,expected",
+    [
+        (2, -3, -6),  # positivity failed
+        (5, 5, 20),   # result failed
+        (1, 0, 0),
+    ]
+)
+class TestMultiply:
+    def test_multiply(self, a, b, expected):
+        assert multiply(a, b) == expected
+    def test_positive_result(self, a, b, expected):
+        assert expected >= 0
+
+
+
+
+
 
