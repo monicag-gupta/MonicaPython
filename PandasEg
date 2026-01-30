@@ -79,3 +79,82 @@ df_sorted = df.sort_values(by='Age')
 print("\nDataFrame sorted by Age:")
 print(df_sorted)
 
+
+
+
+
+
+
+
+
+
+__________________
+
+
+
+
+
+# Import necessary libraries
+import pandas as pd
+import numpy as np
+
+# Step 1: Create a sample DataFrame
+data = {
+    'Name': ['Alice', 'Bob', 'Charlie', 'David', 'Eve'],
+    'Age': [25, 30, np.nan, 40, '28'],  # '28' is a string, others are numeric
+    'City': ['New York', 'Los Angeles', np.nan, 'Chicago', 'Houston'],
+    'Salary': [50000, 60000, 70000, np.nan, 80000],
+    'Joining Date': ['2022-01-01', '2021-05-15', '2020-03-10', None, '2019-07-30']
+}
+
+df = pd.DataFrame(data)
+print("Initial DataFrame:")
+print(df)
+
+# Step 2: Handling missing values
+# Fill missing 'Age' with the mean of the numeric values
+df['Age'] = pd.to_numeric(df['Age'], errors='coerce')  # Convert 'Age' to numeric
+df['Age'] = df['Age'].fillna(df['Age'].mean())  # Fill missing 'Age' with the mean
+
+# Fill missing 'City' with a default value
+df['City'] = df['City'].fillna('Unknown')
+
+# Fill missing 'Salary' with 0
+df['Salary'] = df['Salary'].fillna(0)
+
+print("\nDataFrame after handling missing values:")
+print(df)
+
+# Step 3: Converting data types
+# Convert 'Joining Date' to datetime
+df['Joining Date'] = pd.to_datetime(df['Joining Date'], errors='coerce')
+
+# Ensure 'Age' is a float and 'Salary' is an integer
+df['Age'] = df['Age'].astype(float)
+df['Salary'] = df['Salary'].astype(int)
+
+print("\nDataFrame after converting data types:")
+print(df)
+
+# Step 4: Applying functions to columns or rows
+# Add a column to calculate the year of joining
+df['Joining Year'] = df['Joining Date'].apply(lambda x: x.year if pd.notnull(x) else 'Unknown')
+
+# Add a column categorizing 'Age'
+df['Age Category'] = df['Age'].apply(lambda x: 'Youth' if x < 30 else 'Adult')
+
+# Add a row-wise operation: calculating a bonus as 10% of the salary
+df['Bonus'] = df['Salary'] * 0.1
+
+print("\nDataFrame after applying functions:")
+print(df)
+
+
+
+
+
+
+
+__________________
+
+
