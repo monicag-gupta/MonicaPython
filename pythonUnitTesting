@@ -380,3 +380,35 @@ def test_send_message_with_dummy():
 #  No logic inside
 
 
+
+
+
+A Stub provides predefined responses to method calls during testing.
+
+
+# Stub Object – Simple Example
+# Code under test
+def get_greeting(user):
+    user.get_name()
+    return f"Hello Jay"
+
+# Stub object
+class StubUser:
+    def get_name(self):
+        pass
+        #return "Jay"   # fixed, predefined value
+
+# Test using Stub
+def test_get_greeting_with_stub():
+    user = StubUser()   # stub
+    result = get_greeting(user)
+    assert result == "Hello Jay"
+# Why this is a Stub
+# Returns controlled data
+# No real user object needed
+# Used to drive the code path
+
+
+
+
+
