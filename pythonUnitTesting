@@ -151,3 +151,22 @@ if __name__ == "__main__":
     unittest.main()
 
 
+
+
+8. Running Tests Programmatically
+Useful when integrating tests into scripts or CI tools.
+import unittest
+
+def run_tests():
+    suite = unittest.TestLoader().discover('.')
+    runner = unittest.TextTestRunner(verbosity=2)
+    runner.run(suite)
+
+if __name__ == "__main__":
+    run_tests()
+unittest Lifecycle
+setUpClass()
+ └── setUp()
+     └── test_method()
+ └── tearDown()
+tearDownClass()
