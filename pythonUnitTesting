@@ -295,5 +295,81 @@ pytest .\test_app.py
 
 
 
+Mock (Test Double)
+Real code we want to test
+def process(reader):
+    return reader.read().upper()
+Use a Mock (Behavior-based testing)
+Simple Mock Example (using unittest.mock)
+from unittest.mock import Mock
+def test_process_with_mock():
+    reader = Mock()
+    reader.read.return_value = "hello"
+    result = process(reader)
+    assert result == "HELLO"
+    reader.read.assert_called_once()
+Why Mock is useful
+Avoid slow dependencies
+Verify behavior (method called or not)
+Keep tests fast and isolated
+
+
+
+
+
+Mock (Test Double)
+Real code we want to test
+def process(reader):
+    return reader.read().upper()
+Use a Mock (Behavior-based testing)
+Simple Mock Example (using unittest.mock)
+from unittest.mock import Mock
+def test_process_with_mock():
+    reader = Mock()
+    reader.read.return_value = "hello"
+    result = process(reader)
+    assert result == "HELLO"
+    reader.read.assert_called_once()
+Why Mock is useful
+Avoid slow dependencies
+Verify behavior (method called or not)
+Keep tests fast and isolated
+
+
+
+
+
+from unittest.mock import Mock
+def process(reader):
+    """
+    Expects an object that provides a read() method.
+    """
+    return reader.read().upper()
+
+# process() depends on reader
+# reader could be a file, DB, API, etc.
+# We don’t want real dependencies in tests
+
+# Use a Mock (Behavior-based testing)
+# Now let’s verify:
+# “Was read() actually called?”
+
+# Create Mock object
+def test_process_with_mock():
+    reader = Mock()
+    reader.read.return_value = "hello"
+    # No class needed
+    # Behavior is configured dynamically
+    # Call the function
+    result = process(reader)
+    # Assertions
+    assert result == "HELLO"
+    reader.read.assert_called_once()
+    # Checks result
+    # Verifies interaction
+# Run the Mock test
+# pytest test_service_mock.py
+
+
 
 
