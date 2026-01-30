@@ -864,3 +864,39 @@ if __name__ == "__main__":
         runner.run(suite)
 
 
+
+_______________
+
+
+pip install pytest pytest-html
+
+
+
+test_math.py
+
+
+import pytest
+# ---------------- PASS ----------------
+def test_pass():
+    assert 1 + 1 == 2
+# ---------------- FAIL ----------------
+def test_fail():
+    assert 2 * 2 == 5
+# ---------------- ERROR ----------------
+def test_error():
+    x = 10 / 0
+    assert x == 5
+# ---------------- SKIP ----------------
+@pytest.mark.skip(reason="Feature not implemented")
+def test_skip():
+    assert True
+# ---------------- XFAIL ----------------
+@pytest.mark.xfail(reason="Known bug")
+def test_xfail():
+    assert 10 / 3 == 3
+
+
+
+
+pytest --html=report.html
+
