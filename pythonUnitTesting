@@ -899,6 +899,9 @@ def test_xfail():
 
 
 pytest --html=report.html
+pytest test_math.py::test_add --html=report.html
+
+pytest test_assert_math.py::test_assert* --html=report.html
 
 pytest -v --junitxml=results.xml
 
