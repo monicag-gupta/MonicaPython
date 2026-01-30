@@ -226,4 +226,27 @@ if __name__ == "__main__":
 
 
 
+Fake (Test Double)
+Real code we want to test
+
+def process(reader):
+    return reader.read().upper()
+
+Fake object (Test Double)
+class FakeReader:
+    def read(self):
+        return "hello world"
+
+Test using Fake
+def test_process_with_fake():
+    reader = FakeReader()     # test double
+    result = process(reader)
+    assert result == "HELLO WORLD"
+
+No real file
+No database
+Fully controlled input
+
+
+
 
