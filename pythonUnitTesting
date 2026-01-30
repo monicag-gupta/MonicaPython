@@ -250,3 +250,39 @@ Fully controlled input
 
 
 
+def process(reader):
+    """
+    Expects an object that provides a read() method.
+    """
+    return reader.read().upper()
+
+# process() depends on reader
+# reader could be a file, DB, API, etc.
+# We don’t want real dependencies in tests
+
+# Decide the Test Double type
+# We’ll use:
+# Fake → simple replacement
+# Mock → verify interaction
+
+# Create a Fake (Test Double)
+class FakeReader:
+    def read(self):
+        return "hello world"
+
+# Fake behaves like the real object
+# No external dependency
+
+# Write test using Fake
+def test_process_with_fake():
+    reader = FakeReader()     # test double
+    result = process(reader)
+    assert result == "HELLO WORLD"
+
+# Test passes
+# Logic tested in isolation
+# Run the Fake test: From terminal:
+# pytest test_service_fake.py
+# Fast, Reliable, No setup required
+
+
