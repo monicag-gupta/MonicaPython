@@ -102,3 +102,33 @@ if __name__ == "__main__":
         test_process_with_invalid_reader()
     except AttributeError:
         print("Caught AttributeError manually")
+
+
+
+
+
+
+import pytest
+def process(reader):
+    """
+    Expects an object that provides a read() method.
+    """
+    data = reader.read()
+    return data.upper()
+class FakeReader:
+    def read(self):
+        return "hello world"
+def test_process_with_valid_reader():
+    reader = FakeReader()
+    result = process(reader)
+    assert result == "HELLO WORLD"
+class InvalidReader:
+    pass
+def test_process_with_invalid_reader():
+    reader = InvalidReader()
+    with pytest.raises(AttributeError):
+        process(reader)
+
+
+
+
