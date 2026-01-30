@@ -79,3 +79,20 @@ features:
 
 
 
+read_yaml.py
+
+
+import yaml
+
+with open("config.yaml", "r") as file:
+    config = yaml.safe_load(file)
+
+print(config)
+print()
+# Accessing YAML Data
+
+print(config["app"]["name"])        # Calculator
+print(config["database"]["host"])   # localhost
+print(config["features"][0])        # add
+
+
