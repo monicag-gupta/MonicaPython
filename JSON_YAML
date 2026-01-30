@@ -139,3 +139,11 @@ with open("config.yaml", "w") as file:
     yaml.dump(config, file, default_flow_style=False)
 
 
+
+
+Safe vs Unsafe Loading (IMPORTANT)
+Always use:
+	yaml.safe_load(file)
+Avoid:
+	yaml.load(file)
+yaml.load() can execute arbitrary code (security risk).
